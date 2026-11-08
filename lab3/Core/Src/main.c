@@ -62,6 +62,7 @@
 #define LIS3DSH_MASK1_B_ADDR		0x59
 #define LIS3DSH_MASK1_A_ADDR		0x5A
 #define LIS3DSH_SETT1_ADDR			0x5B
+#define LIS3DSH_OUTS1_ADDR 			0x5F
 
 /* USER CODE END PM */
 
@@ -154,7 +155,9 @@ void vHandlerTask( void *pvParameters ) // taskB
 
 				// reset interrupt register
 				//MEMS_Write(LIS3DSH_THRS1_1_ADDR, 0x55);
-				SensorInit();
+				//SensorInit();
+				uint8_t status;
+				MEMS_Read(LIS3DSH_OUTS1_ADDR, &status);
 			}
 		}
 }
