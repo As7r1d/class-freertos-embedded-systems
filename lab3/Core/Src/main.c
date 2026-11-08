@@ -149,7 +149,7 @@ void vHandlerTask( void *pvParameters ) // taskB
 				for(int i = 0; i < 10; i++){
 					uint32_t From_begin_time = HAL_GetTick();
 					HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-					while(HAL_GetTick() - From_begin_time < 250/portTICK_RATE_MS){;}
+					while((HAL_GetTick() - From_begin_time) < 250U){;}
 				}
 
 				// reset interrupt register
