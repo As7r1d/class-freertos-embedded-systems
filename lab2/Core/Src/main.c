@@ -41,11 +41,7 @@
   *
   ******************************************************************************
   */
-/* USER CODE END Header */
-/* Includes ------------------------------------------------------------------*/
-#include "main.h"
-#include"FreeRTOS.h"
-#include"task.h"
+
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -196,14 +192,14 @@ int main(void)
 	*/
 	xTaskCreate(
 		  Red_LED_APP,
-		  "Red_LED_APP",
+		  "Red_LED",
 		  128,
 		  NULL,
 		  1,
 		  &xHandle);
 	xTaskCreate(
 		  Green_LED_APP,
-		  "Green_LED_APP",
+		  "Green_LED",
 		  128,
 		  NULL,
 		  1,
@@ -213,7 +209,7 @@ int main(void)
 		  "TaskMonitor",
 		  512,
 		  NULL,
-		  2,
+		  3,
 		  &xHandle);
 	xTaskCreate(
 		  Delay_APP,
